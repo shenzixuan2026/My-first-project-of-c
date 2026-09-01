@@ -7,7 +7,7 @@
     scanf("%d %d", &a, &b);
     printf("%d + %d = %d\n", a, b, a + b);
 
-    return 0;
+    return 0; //告诉操作系统程序执行成功
 }
 
 int main() 
@@ -126,7 +126,7 @@ int main()
 }
 */
 
-//数组终极考核哈哈哈哈2种方法
+//数组终极考核2种方法
 /*方法一，较麻烦必须要一个一个走循环，不经济但是代码较简单
 int main()
 {
@@ -157,7 +157,7 @@ int main()
     int left = 0;
     int n = sizeof(arr) / sizeof(arr[0]); //158 159两行内容可以用法二代替：int right = strlen(arr) - 1;
     int right = n - 1;
-    while(left <= right){
+    while(left <= right){     //是循环二分法的思路，优先想到用while循环的方法
         int mid = (left + right) / 2;
         if(arr[mid] == k){
             printf("找到了，下标结果是：%d\n", mid);
@@ -194,7 +194,7 @@ int main()
  
    
    }
-*/
+
  
 //二阶数组做函数参数的训练,void可以调用但没有返回值
 
@@ -206,7 +206,7 @@ void set_arr(int arr[3][5], int r, int c)
         int j = 0;
         for(j = 0; j < c; j++)
         {
-            arr[i][j] = i + j;
+            arr[i][j] = i + j;//给二维数组赋值，i+j的和
             
 
         }
@@ -215,7 +215,7 @@ void set_arr(int arr[3][5], int r, int c)
 
 }
 
-void print_arr(int arr[3][5], int r, int c)
+void print_arr(int arr[3][5], int r, int c)//打印二维数组，void可以调用但没有返回值
 {
     int i = 0;
     for(i = 0; i < r; i++)
@@ -227,17 +227,30 @@ void print_arr(int arr[3][5], int r, int c)
             
 
         }
-        printf("\n");
+        printf("\n");//换行，但一定要在for循环外面换行
     }
     printf("\n");
 }
 
-
+//里面没有int，只调用就可以不需要有返回值      
 
 int main()
 {
     int arr [3][5] = { 0 };
-    set_arr(arr, 3, 5);
-    print_arr(arr, 3, 5);
+    set_arr(arr, 3, 5);  //调用函数，传入数组和行列表
+    print_arr(arr, 3, 5);//打印出来
     return 0;
 }
+*/
+
+//extern int food;  //声明一个外部变量food，告诉编译器这个变量在其他文件中定义过了
+//cd "/Users/shenzixuan/Desktop/vscode/" && gcc main.c year.c -o main && ./main
+//每次都要复制这个链接到终端
+extern int food;
+int main()
+{
+    printf("%d\n", food);
+    return 0;
+}
+
+
